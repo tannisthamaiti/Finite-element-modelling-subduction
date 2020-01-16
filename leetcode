@@ -1,0 +1,27 @@
+import java.util.HashMap;
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap <Integer, Integer> map = new HashMap<Integer, Integer>();
+        int n = nums.length; 
+        int res;
+        for (int i = 0; i < n; i++) {
+            res = target - nums[i];
+            //if we already have the complement in HashMap,
+            //return an array that contains indices of them.  
+            if (map.containsKey(res)) {
+                return new int[] {i, map.get(res)};
+            }
+            //if its complement is not in HashMap but in the array,
+            //they will be matched when the complement is 
+            //regarded as current element.
+            //add current element into HashMap.
+            map.put(nums[i], i);
+            
+    }
+        //Exception which says it is unavailable to find solution
+        //with these arguments.
+        throw new IllegalArgumentException("No solution");
+
+    }
+}
+_______________________________________________________________________________
